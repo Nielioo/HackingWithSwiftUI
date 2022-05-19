@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @State var tapCount = 0
+    
     @State private var name = ""
     
     let students = ["Harry", "Hermione", "Ron"]
     @State private var selectedStudent = "Harry"
+    
+//    @State private var checkAmount = 0.0
+//    @State private var numberOfPeople = 2
+//    @State private var tipPercentage = 20
+//    let tipPercentages = [10, 15, 20, 25, 0]
     
     var body: some View {
         
@@ -23,7 +29,7 @@ struct ContentView: View {
                 Section {
                     Text("Hello, world!")
                 }
-                
+
                 Section {
                     Text("Hello, world!")
                     Text("Hello, world!")
@@ -52,6 +58,17 @@ struct ContentView: View {
                 }
             }
         }
+        
+//        Form {
+//            Section {
+//                TextField("Amount", value: $checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+//                    .keyboardType(.decimalPad)
+//            }
+//
+//            Section {
+//                Text(checkAmount, format: .currency(code: Locale.current.currencyCode ?? "USD"))
+//            }
+//        }
         
     }
 }
