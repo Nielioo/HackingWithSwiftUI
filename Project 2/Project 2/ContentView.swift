@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var showingAlert = false
+    
     var body: some View {
         //        ZStack {
         //            VStack(spacing: 0) {
@@ -31,41 +34,50 @@ struct ContentView: View {
         //
         //        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
         
+        //        VStack{
+        //            Button("Delete selection", role: .destructive, action: executeDelete)
+        //
+        //            Spacer()
+        //
+        //            Button("Button 1") { }
+        //                .buttonStyle(.bordered)
+        //            Button("Button 2", role: .destructive) { }
+        //                .buttonStyle(.bordered)
+        //            Button("Button 3") { }
+        //                .buttonStyle(.borderedProminent)
+        ////                .tint(.mint)
+        //            Button("Button 4", role: .destructive) { }
+        //                .buttonStyle(.borderedProminent)
+        //
+        //            Spacer()
+        //
+        //            Button {
+        //                print("Button was tapped")
+        //            } label: {
+        //                Text("Tap me!")
+        //                    .padding()
+        //                    .foregroundColor(.white)
+        //                    .background(.red)
+        //            }
+        //
+        //            Spacer()
+        //
+        //            Button {
+        //                print("Edit button was tapped")
+        //            } label: {
+        //                Label("Edit", systemImage: "pencil")
+        //            }
+        //        }
+        
         VStack{
-            Button("Delete selection", role: .destructive, action: executeDelete)
-            
-            Spacer()
-            
-            Button("Button 1") { }
-                .buttonStyle(.bordered)
-            Button("Button 2", role: .destructive) { }
-                .buttonStyle(.bordered)
-            Button("Button 3") { }
-                .buttonStyle(.borderedProminent)
-//                .tint(.mint)
-            Button("Button 4", role: .destructive) { }
-                .buttonStyle(.borderedProminent)
-            
-            Spacer()
-            
-            Button {
-                print("Button was tapped")
-            } label: {
-                Text("Tap me!")
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(.red)
+            Button("Show Alert"){
+                showingAlert = true
+            }.alert("Important Keys", isPresented: $showingAlert){
+                Button("Delete", role: .destructive){ }
+                Button("Cancel", role: .cancel){ }
+            } message: {
+                Text("Please Read This!")
             }
-            
-            Spacer()
-            
-            Button {
-                print("Edit button was tapped")
-            } label: {
-                Label("Edit", systemImage: "pencil")
-            }
-            
-//            Spacer()
         }
         
     }
